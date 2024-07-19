@@ -1,0 +1,11 @@
+CustomerID,Name,Email,Phone,Address,PolicyNumber,JoinDate
+1,John Kamau,johndoe@gmail.com,+254712345678,Greenview Apartments,A123,2021-01-01
+2,Jane Muthoni,janesmith@gmail.com,0723456789,456 Avenue,B456,2020-05-12
+3,Bob Otieno,bobjohnson@yahoo.com,+254734567890,,C789,2019-11-30
+4,Alice Wangari,alicewangari@gmail.com,+254701234567,Riverside Tower,D234,2022-02-15
+5,James Kariuki,jameskariuki@gmail.com,0712345678,,E567,2018-07-20
+6,Lucy Njeri,lucynjeri@yahoo.com,+254705432109,Nairobi West,,2023-09-10
+7,Michael Omondi,michaelomondi@gmail.com,0722334455,Valley Arcade,F123,2024-03-05
+8,Grace Wanjiku,gracewanjiku@gmail.com,+254733221100,,G456,2020-11-18
+9,Peter Mutua,petermutua@yahoo.com,0711223344,Westlands,H789,2021-06-25
+10,Sarah Chebet,sarahchebet@gmail.com,+254710987654,Lavington,,2019-04-30

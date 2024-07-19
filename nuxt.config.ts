@@ -14,4 +14,9 @@ export default defineNuxtConfig({
     ],
   ],
   css: ["/assets/styles/main.scss"],
+  runtimeConfig: {
+    private: {
+      REPLICATE_API_TOKEN: "",
+    },
+  },
 });
