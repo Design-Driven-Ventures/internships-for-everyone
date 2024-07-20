@@ -1,10 +1,20 @@
+<p align="center">
+  <img src="public/preview.jpg" width="500px" alt="Preview of Internships for everyone">
+</p>
+
 # Internships for everyone
 
-Millions of young Africans want a job, but internship and professional training opportunities remain scarce. What if we use Llama 3 to simulate internships for everyone and reduce barriers to employability at scale?
+Millions of young Africans want a job, but internship and professional training opportunities remain limited. What if we use Llama 3 to simulate internships for everyone and reduce barriers to employability at scale?
 
 ## How it works
 
 Our ‘Data Analyst’ internship simulation leverages the Meta Llama 3 70B Instruct model, hosted by Replicate. We simulate interactions with three realistic coworkers from a fictional 'SafeLife Insurance' company in Kenya, guiding the intern through their experience. Each virtual coworker has a chat thread with a detailed system message defining their personality, the team and company context, and the intern's tasks and expected deliverables.
+
+## Specs
+
+- Nuxt3 web app
+- Vuetify for UI + Google Font
+- Meta Llama 3 70B Instruct model [(Licence)](https://llama.meta.com/llama3/license/) via [Replicate](https://replicate.com)
 
 ## Setup
 
@@ -12,10 +22,11 @@ Our ‘Data Analyst’ internship simulation leverages the Meta Llama 3 70B Inst
 
 2. Clone the repo and create a .env file in route directory:
 
-````env
+```env
 NUXT_PRIVATE_REPLICATE_API_TOKEN='your_api_token'
-# Optional: Set port for dev server
+# Optionally set port for the local dev server:
 PORT=3000
+```
 
 3. Make sure to install the dependencies:
 
@@ -31,7 +42,7 @@ yarn install
 
 # bun
 bun install
-````
+```
 
 4. Edit the `assets/instructions.json` file to customize the internship simulation scenario.
 
