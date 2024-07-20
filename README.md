@@ -1,10 +1,10 @@
 <p align="center">
-  <img src="public/preview.jpg" width="500px" alt="Preview of Internships for everyone">
+  <img src="public/preview.jpg" alt="Preview of Internships for everyone">
 </p>
 
 # Internships for everyone
 
-Millions of young Africans want a job, but internship and professional training opportunities remain limited. What if we use Llama 3 to simulate internships for everyone and reduce barriers to employability at scale?
+Millions of young Africans want a job, but internships and professional training opportunities remain limited. What if we use Llama 3 to simulate internships for everyone and reduce barriers to employability at scale?
 
 ## How it works
 
