@@ -14,7 +14,7 @@ Our ‘Data Analyst’ internship simulation leverages the Meta Llama 3 70B Inst
 
 - Nuxt3 web app
 - Vuetify for UI + Google Font
-- Meta Llama 3 70B Instruct model [(Licence)](https://llama.meta.com/llama3/license/) via [Replicate](https://replicate.com)
+- Meta Llama 3 70B Instruct model [(License)](https://llama.meta.com/llama3/license/) via [Replicate](https://replicate.com)
 
 ## Setup
 

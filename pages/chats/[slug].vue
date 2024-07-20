@@ -114,10 +114,29 @@ const sendMessage = async () => {
     goTo("#bottom");
   }, 20);
 
-  const response = await $fetch("/api/chat", {
-    method: "POST",
-    body: JSON.stringify(chats.value[slug]),
-  });
+  let response;
+
+  try {
+    response = await $fetch("/api/chat", {
+      method: "POST",
+      body: JSON.stringify(chats.value[slug]),
+    });
+
+    if (response.includes("[message-unsafe]")) {
+      chats.value[slug].messages.pop();
+      alert("Your message was rejected for security reasons.");
+      typing.value = false;
+      return;
+    }
+  } catch (error) {
+    console.error(error);
+    // remove the last message
+    chats.value[slug].messages.pop();
+
+    alert("Something went wrong, please try again.");
+    typing.value = false;
+    return;
+  }
 
   let reply = response;
 
