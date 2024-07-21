@@ -5,7 +5,7 @@
         variant="text"
         @click.stop="drawer = !drawer"
       ></v-app-bar-nav-icon>
-      <div style="font-weight: bold" class="">
+      <div style="font-weight: bold" class="text-body-1 text-md-h6">
         <v-icon>mdi-umbrella</v-icon>SafeLife Insurance
       </div>
       <v-spacer></v-spacer>
