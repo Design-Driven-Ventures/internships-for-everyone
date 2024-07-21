@@ -10,7 +10,7 @@ Millions of young Africans want a job, but internships and skill-building opport
 
 Our ‘Data Analyst’ internship simulation leverages the Meta Llama 3 70B Instruct model, hosted by Replicate. We simulate interactions with three realistic coworkers from a fictional 'SafeLife Insurance' company in Kenya, guiding the intern through their experience. Each virtual coworker has a chat thread with a detailed system message defining their personality, the team and company context, and the intern's tasks and expected deliverables.
 
-(Demo)[https://unlimited-internships-66awdaotla-uc.a.run.app/]
+[Demo](https://unlimited-internships-66awdaotla-uc.a.run.app/)
 
 ## Specs
 
