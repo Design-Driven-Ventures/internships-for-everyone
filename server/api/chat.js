@@ -17,22 +17,18 @@ export default defineEventHandler(async (event) => {
     auth: config.private.REPLICATE_API_TOKEN,
   });
 
-  console.log(newMessage.message);
+  //   const promptSafety = await replicate.run(
+  //     "meta/meta-llama-guard-2-8b:b063023ee937f28e922982abdbf97b041ffe34ad3b35a53d33e1d74bb19b36c4",
+  //     {
+  //       input: {
+  //         prompt: newMessage.message,
+  //       },
+  //     }
+  //   );
 
-  const promptSafety = await replicate.run(
-    "meta/meta-llama-guard-2-8b:b063023ee937f28e922982abdbf97b041ffe34ad3b35a53d33e1d74bb19b36c4",
-    {
-      input: {
-        prompt: newMessage.message,
-      },
-    }
-  );
-
-  console.log("promptSafety", promptSafety);
-
-  if (promptSafety.includes("unsafe")) {
-    return "[message-unsafe]";
-  }
+  //   if (promptSafety.includes("unsafe")) {
+  //     return "[message-unsafe]";
+  //   }
 
   let prompt_template = `<|begin_of_text|><|start_header_id|>system<|end_header_id|>\n\n${persona}<|eot_id|>`;
 
@@ -62,21 +58,19 @@ export default defineEventHandler(async (event) => {
 
   console.log(reply.join(""));
 
-  const replySafety = await replicate.run(
-    "meta/meta-llama-guard-2-8b:b063023ee937f28e922982abdbf97b041ffe34ad3b35a53d33e1d74bb19b36c4",
-    {
-      input: {
-        prompt: newMessage.message,
-        assistant: reply.join(""),
-      },
-    }
-  );
+  //   const replySafety = await replicate.run(
+  //     "meta/meta-llama-guard-2-8b:b063023ee937f28e922982abdbf97b041ffe34ad3b35a53d33e1d74bb19b36c4",
+  //     {
+  //       input: {
+  //         prompt: newMessage.message,
+  //         assistant: reply.join(""),
+  //       },
+  //     }
+  //   );
 
-  console.log("replySafety", replySafety);
-
-  if (replySafety.includes("unsafe")) {
-    return "[message-unsafe]";
-  }
+  //   if (replySafety.includes("unsafe")) {
+  //     return "[message-unsafe]";
+  //   }
 
   return reply.join("");
 });

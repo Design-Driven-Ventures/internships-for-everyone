@@ -1,42 +1,44 @@
 <template>
   <v-container class="fill-height pa-6 pb-6">
-    <div v-for="message in chats[slug].messages" class="d-flex w-100 pb-3">
-      <v-avatar>
-        <v-img
-          :src="
-            message.sender == 'you'
-              ? 'https://www.gravatar.com/avatar/00000000000000000000000000000000?d=mp&f=y'
-              : chats[slug].avatar
-          "
-        >
-        </v-img>
-      </v-avatar>
-      <div class="pl-3">
-        <h4 class="text-body-1 font-weight-bold">
-          {{ message.sender == "you" ? "You" : chats[slug].name }}
-        </h4>
-        <p
-          class="text-body-1"
-          v-html="message.message"
-          style="word-wrap: normal"
-        ></p>
+    <template v-if="loaded">
+      <div v-for="message in chats[slug].messages" class="d-flex w-100 pb-3">
+        <v-avatar size="40px">
+          <v-img
+            :src="
+              message.sender == 'you'
+                ? 'https://www.gravatar.com/avatar/00000000000000000000000000000000?d=mp&f=y'
+                : chats[slug].avatar
+            "
+          >
+          </v-img>
+        </v-avatar>
+        <div class="pl-3">
+          <h4 class="text-body-1 font-weight-bold">
+            {{ message.sender == "you" ? "You" : chats[slug].name }}
+          </h4>
+          <p
+            class="text-body-1"
+            v-html="message.message"
+            style="word-wrap: normal"
+          ></p>
+        </div>
       </div>
-    </div>
 
-    <div class="d-flex w-100 pb-3" v-if="typing">
-      <v-avatar>
-        <v-img :src="chats[slug].avatar"> </v-img>
-      </v-avatar>
-      <div class="w-100">
-        <h4 class="text-body-1 font-weight-bold pl-3">
-          {{ chats[slug].name }}
-        </h4>
-        <v-skeleton-loader
-          class="w-25 pa-0 ma-0"
-          type="list-item-two-line"
-        ></v-skeleton-loader>
+      <div class="d-flex w-100 pb-3" v-if="typing">
+        <v-avatar>
+          <v-img :src="chats[slug].avatar"> </v-img>
+        </v-avatar>
+        <div class="w-100">
+          <h4 class="text-body-1 font-weight-bold pl-3">
+            {{ chats[slug].name }}
+          </h4>
+          <v-skeleton-loader
+            class="w-25 pa-0 ma-0"
+            type="list-item-two-line"
+          ></v-skeleton-loader>
+        </div>
       </div>
-    </div>
+    </template>
 
     <div id="bottom"></div>
   </v-container>
@@ -70,6 +72,8 @@
 definePageMeta({
   layout: "chat",
 });
+
+const loaded = useState("loaded");
 
 import { useGoTo } from "vuetify";
 

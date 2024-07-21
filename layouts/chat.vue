@@ -5,15 +5,20 @@
         variant="text"
         @click.stop="drawer = !drawer"
       ></v-app-bar-nav-icon>
-      <v-toolbar-title style="font-weight: bold"
-        ><v-icon>mdi-umbrella</v-icon>SafeLife Insurance</v-toolbar-title
-      >
+      <div style="font-weight: bold" class="">
+        <v-icon>mdi-umbrella</v-icon>SafeLife Insurance
+      </div>
       <v-spacer></v-spacer>
       <v-btn rounded="xl" class="mr-2" @click="resign">
         <v-icon class="mr-2">mdi-exit-to-app</v-icon>Resign</v-btn
       >
     </v-app-bar>
-    <v-navigation-drawer v-model="drawer" color="#EBF4F6" border="0" persistent>
+    <v-navigation-drawer
+      v-model="drawer"
+      color="#EBF4F6"
+      border="0"
+      :permanent="$vuetify.display.smAndUp"
+    >
       <v-list class="pa-3 pt-2">
         <v-list-item
           v-for="chat in chats"
@@ -40,9 +45,11 @@
 const router = useRouter();
 let instructions = await import("~/assets/instructions.json");
 
-const chats = useState("chats", () => instructions);
+const chats = useState("chats", () => instructions.default);
 
 const drawer = ref(true);
+
+const loaded = useState("loaded", () => false);
 
 // watch chats and save to localStorage
 
@@ -51,7 +58,6 @@ watch(
   (value) => {
     if (!value) return;
     localStorage.setItem("chats", JSON.stringify(value));
-    console.log("chats saved to localStorage");
   },
   { deep: true }
 );
@@ -61,8 +67,8 @@ watch(
 onBeforeMount(() => {
   if (localStorage.getItem("chats")) {
     chats.value = JSON.parse(localStorage.getItem("chats"));
-    console.log("chats loaded from localStorage");
   }
+  loaded.value = true;
 });
 
 const resign = () => {
@@ -76,11 +82,7 @@ const resign = () => {
       // Remove chats from local storage
       localStorage.removeItem("chats");
       // loop through the chats and reset the messages
-      for (const chat in chats.value) {
-        chats.value[chat].messages = [];
-      }
-      // set default message for jane
-      chats.value.jane.messages = instructions.jane.messages;
+      chats.value = instructions.default;
     } catch (error) {
       console.error("Error removing chats from localStorage:", error);
     }

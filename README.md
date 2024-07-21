@@ -4,11 +4,13 @@
 
 # Internships for everyone
 
-Millions of young Africans want a job, but internships and professional training opportunities remain limited. What if we use Llama 3 to simulate internships for everyone and reduce barriers to employability at scale?
+Millions of young Africans want a job, but internships and skill-building opportunities remain scarce. What if we use Llama 3 to simulate internships for everyone and reduce barriers to employability at scale?
 
 ## How it works
 
 Our ‘Data Analyst’ internship simulation leverages the Meta Llama 3 70B Instruct model, hosted by Replicate. We simulate interactions with three realistic coworkers from a fictional 'SafeLife Insurance' company in Kenya, guiding the intern through their experience. Each virtual coworker has a chat thread with a detailed system message defining their personality, the team and company context, and the intern's tasks and expected deliverables.
+
+(Demo)[https://unlimited-internships-66awdaotla-uc.a.run.app/]
 
 ## Specs
 
